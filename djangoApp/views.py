@@ -5,12 +5,7 @@ def hello(request):
     context = {'var': random.randint(0, 100), 'var2': 'smth'}
     return render(request, 'hello.html', context = context)
 def main(request):
-    ex = Example()
-    ex.smth = 100
-    ex.smth2 = 'something'
-    ex.save()
+    context = {'from_db': Example.objects.all()[0].smth}
 
-    return render(request, 'main.html')
+    return render(request, 'main.html', context=context)
 
-def main(request):
-    return render(request, 'main.html')

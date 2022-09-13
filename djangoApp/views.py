@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from models import Example
 import random
-
+from djangoApp.models import Example
 def hello(request):
     context = {'var': random.randint(0, 100), 'var2': 'smth'}
     return render(request, 'hello.html', context = context)
